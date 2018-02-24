@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'pages#index'
   get "/car_request", to: "pages#car_request"
   get "/request_taken", to: "pages#request_taken"
