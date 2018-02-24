@@ -1,0 +1,67 @@
+%form.form.inline.my-2.my-lg-0{ action: "/request_taken", method: "get"}
+  #prepare_ride
+    .form-group
+      %input.form-control.mr.sm-2{ placeholder: "My Location"}
+    .form-group
+      %input.form-control.mr.sm-2{ placeholder: "Destination"}
+    .form-group
+      %label{ for: "exampleFormControlSelect1" }
+        Area where car should be placed:
+      %select.form-control#exampleFormControlSelect1
+        %option
+          50m
+        %option
+          100m
+        %option
+          200m
+        %option
+          500m
+    .form-group
+      %button.btn#showMoreFiltersBtn
+        Show more filters
+    .form-row.align-items-center#additionalItems
+      .col-auto.my-1
+        %label.mr-sm-2{ for: "inlineFormCustomSelect" }
+          Car Type
+        %select.custom-select.mr-sm-2#inlineFormCustomSelect
+          %option{ selected: true }
+            Choose...
+          %option
+            Volvo 1
+          %option
+            Volvo 2
+          %option
+            Volvo 3
+          %option
+            Volvo 4
+          %option
+            Volvo 5
+          %option
+            Volvo 6
+      .col-auto.my-1
+        %label.mr-sm-2{:for => "inlineFormCustomSelect"} Number of seats
+        %select#inlineFormCustomSelect.custom-select.mr-sm-2
+          %option{:selected => "selected"} Choose...
+          %option{:value => "1"} 2
+          %option{:value => "2"} 4
+          %option{:value => "3"} 5
+          %option{:value => "3"} 6
+      .col-auto.my-1
+        %label.mr-sm-2{:for => "inlineFormCustomSelect"} Horse power
+        %select#inlineFormCustomSelect.custom-select.mr-sm-2
+          %option{:selected => "selected"} Choose...
+          %option{:value => "1"} 110
+          %option{:value => "2"} 130
+          %option{:value => "3"} 150
+          %option{:value => "3"} 180
+      .col-auto.my-1
+        %label.mr-sm-2{:for => "inlineFormCustomSelect"} Color
+        %select#inlineFormCustomSelect.custom-select.mr-sm-2
+          %option{:selected => "selected"} Choose...
+          %option{:value => "1"} Red
+          %option{:value => "2"} Blue
+          %option{:value => "3"} Yellow
+          %option{:value => "3"} Green
+    .form-group
+      %button.btn.btn-outline-primary.my-2-my-sm-0{ type: "submit" }
+        Prepare Ride

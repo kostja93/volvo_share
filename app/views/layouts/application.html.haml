@@ -21,5 +21,9 @@
       %button.navbar-toggler#hide_forms{ type: "button", "data-toggle" => "collapse", "data-target" => "#navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation" }
         %span.navbar-toggler-icon
       .collapse.navbar-collapse#navbarSupportedContent
-        = yield :nav_content
-    = yield
+        %ul.navbar-nav.mr-auto
+          %li.nav-item
+            %a.nav-link{ href: "/car_request"}
+              Request Car
+    .container
+      = yield

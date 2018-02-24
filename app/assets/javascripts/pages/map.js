@@ -9,7 +9,7 @@ $(document).ready(function() {
     }).done(function(cars) {
       for (var i = 0; i < cars.length; i++) {
         car = cars[i];
-        L.marker([car.lat, car.lng]).addTo(mymap).bindPopup(car.model);
+        L.marker([car.lat, car.lng]).addTo(mymap).bindPopup(car.name);
       }
     });
   }
@@ -41,17 +41,17 @@ $(document).ready(function() {
   var circle = {};
   var request_car_distance = $('#request_car_distance');
 
-  load_map();
-  load_cars();
-  load_circle();
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(setPosition);
+  if ($('#mapid').length != 0) {
+    load_map();
+    load_cars();
+    load_circle();
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(setPosition);
+    }
+    request_car_distance.keyup(function() {
+      distance = parseInt($(this).val())
+      update_location_circle(distance)
+    })
   }
-
-  request_car_distance.keyup(function() {
-    distance = parseInt($(this).val())
-    update_location_circle(distance)
-  })
 });
 

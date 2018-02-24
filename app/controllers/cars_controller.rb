@@ -2,12 +2,17 @@ class CarsController < ApplicationController
   def index
     objects = cars.find_all do |car|
       valid = false
-      filter_params.each_with_index do |values|
-        key = values.first
-        value = values.last
-        valid = true if car[key] == value || car[key] == value.to_i
+
+      if filter_params.any?
+        filter_params.each_with_index do |values|
+          key = values.first
+          value = values.last
+          valid = true if car[key] == value || car[key] == value.to_i
+        end
+        valid
+      else
+        true
       end
-      valid
     end
     render json: objects.to_json
   end
