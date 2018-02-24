@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/car_dash_3", to: "pages#car_dash_3"
   get "/car_dash_end", to: "pages#car_dash_end"
   resources :cars, only: [:index]
+  resources :car_transfers, only: [:index, :create, :show]
 end
