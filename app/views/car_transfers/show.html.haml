@@ -1,8 +1,8 @@
-#map{ "data-lat" => @car_transfer.lat, "data-lng" => @car_transfer.lng}
+#map{ width: "100%", "data-lat" => @car_transfer.lat, "data-lng" => @car_transfer.lng, "data-radius" => @car_transfer.radius}
 %p
   Can you bring the car to this position
 %hr/
 %a.btn.btn-outline-success.my-2-my-sm-0{href: "/car_dash_2"}
   Yes
-%a.btn.btn-outline-success.my-2-my-sm-0{href: "/car_dash_2"}
+%a.btn.btn-outline-danger.my-2-my-sm-0{href: "/car_dash_2"}
   No
