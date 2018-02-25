@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resource :karma, only: [] do
     get :add
   end
-  resources :profiles, only: [:show]
+  resources :profiles, only: [:show, :index, :update]
   resources :products, only: [:index] do
     get :buy
   end

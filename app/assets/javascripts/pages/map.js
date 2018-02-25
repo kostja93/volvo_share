@@ -49,7 +49,6 @@ $(document).ready(function() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(setPosition);
   }
-  alert("asdfasdf");
   request_car_distance.change(function() {
     distance = parseInt($(this).val())
     update_location_circle(distance)

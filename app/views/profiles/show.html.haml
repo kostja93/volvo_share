@@ -1,12 +1,13 @@
 .card
   %img{:alt => "volvo_viking", :src => "http://lorempixel.com/200/400"}/
-  %h3= @user.name
+  %h3= @user.nickname
   - if @user == current_user
-    %form
+    = form_for(:current_user, method: :put, action: profile_path(current_user)) do
       .col-sm-6
         .form-group.row
           %label{:for => "formGroupExampleInput"} Enter a nickname which will be visible to other users:
-          %input#formGroupExampleInput.form-control{:placeholder => "Volvo Viking #Example", :type => "text"}/
+          %input#formGroupExampleInput.form-control{:placeholder => "Volvo Viking #Example", :type => "text", name: "nickname"}/
+          %input.btn.btn-primary{value: "save", type: "submit"}
       .form-group.row
         %label.col-sm-4.col-form-label{:for => "staticEmail"} Email:
         .col-sm-8
