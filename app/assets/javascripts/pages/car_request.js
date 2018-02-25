@@ -3,7 +3,6 @@ $(document).ready(function() {
   var showMoreFiltersBtn = $('#showMoreFiltersBtn')
   var show = false;
   additionalItems.hide();
-
   showMoreFiltersBtn.click(function(e) {
     e.preventDefault();
     if (show = !show) {

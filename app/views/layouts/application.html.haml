@@ -20,22 +20,23 @@
         VS
       %button.navbar-toggler#hide_forms{ type: "button", "data-toggle" => "collapse", "data-target" => "#navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation" }
         %span.navbar-toggler-icon
-      .collapse.navbar-collapse#navbarSupportedContent
-        %ul.navbar-nav.mr-auto
-          %li.nav-item.dropdown
-            %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              Car
-            .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-              %a.dropdown-item{:href => new_car_transfer_path} Book
-              .dropdown-divider
-              %a.dropdown-item{:href => "/karma/add?karma=70"} Clean
-              %a.dropdown-item{:href => "/karma/add?karma=20"} Fill-Up
-              %a.dropdown-item{:href => "/karma/add?karma=30"} Relocate
-          %li.nav-item
-            %a.nav-link{ href: products_path}
-              Products
-          %li.nav-item
-            %a.nav-link{ href: profile_path(current_user)}
-              Profile
+      - if current_user.present?
+        .collapse.navbar-collapse#navbarSupportedContent
+          %ul.navbar-nav.mr-auto
+            %li.nav-item.dropdown
+              %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                Car
+              .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+                %a.dropdown-item{:href => new_car_transfer_path} Book
+                .dropdown-divider
+                %a.dropdown-item{:href => "/karma/add?karma=70"} Clean
+                %a.dropdown-item{:href => "/karma/add?karma=20"} Fill-Up
+                %a.dropdown-item{:href => "/karma/add?karma=30"} Relocate
+            %li.nav-item
+              %a.nav-link{ href: products_path}
+                Products
+            %li.nav-item
+              %a.nav-link{ href: profile_path(current_user)}
+                Profile
     .container
       = yield

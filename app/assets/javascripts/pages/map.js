@@ -41,17 +41,18 @@ $(document).ready(function() {
   var circle = {};
   var request_car_distance = $('#request_car_distance');
 
-  if ($('#mapid').length != 0) {
-    load_map();
-    load_cars();
-    load_circle();
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(setPosition);
-    }
-    request_car_distance.keyup(function() {
-      distance = parseInt($(this).val())
-      update_location_circle(distance)
-    })
+  if ($('#mapid').length == 0) return
+
+  load_map();
+  load_cars();
+  load_circle();
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(setPosition);
   }
+  alert("asdfasdf");
+  request_car_distance.change(function() {
+    distance = parseInt($(this).val())
+    update_location_circle(distance)
+  })
 });
 
