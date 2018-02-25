@@ -24,3 +24,12 @@ end
 ].each do |product|
   Product.create(product)
 end
+
+[
+  {nickname: "Han Solo", karma: 1345, email: "mail@example.ch", password: "asdfasdf" },
+  {nickname: "Obi Wan", karma: 77, email: "mail1@example.ch", password: "asdfasdf" },
+  {nickname: "Chubaka", karma: 500, email: "mail2@example.ch", password: "asdfasdf" },
+  {nickname: "Martin Lundstedt", karma: 1234, email: "mail3@example.ch", password: "asdfasdf" },
+].each do |user_data|
+  User.create(user_data)
+end

@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.order("karma DESC")
   end
 
   def update

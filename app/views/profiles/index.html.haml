@@ -1,0 +1,5 @@
+%table.table
+  - @users.each do |user|
+    %tr
+      %td= link_to user.nickname, profile_path(user)
+      %td= user.karma.to_s + " Viking Horns"
