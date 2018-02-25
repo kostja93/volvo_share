@@ -11,6 +11,7 @@ class CarTransfersController < ApplicationController
   def show
     @car_transfer = CarTransfer.find(car_transfer_params[:id])
     @car = Car.where(@car_transfer.car_specs)
+    render layout: "car_dash"
   end
 
   def new
