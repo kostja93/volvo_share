@@ -16,3 +16,11 @@
 ].each do |car_data|
   Car.create(car_data)
 end
+
+[
+  {title: "+5 HP", description: "Enable 5 more HP for 30 days", price: 100 },
+  {title: "+10 HP", description: "Enable 10 more HP for 30 days", price: 150},
+  {title: "Seat Heating", description: "Enable seat heating for 30 days", price: 50}
+].each do |product|
+  Product.create(product)
+end
