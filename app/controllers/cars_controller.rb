@@ -1,15 +1,25 @@
 class CarsController < ApplicationController
   def index
-    render json: cars.to_json
+    objects = Car.all.find_all do |car|
+      valid = false
+
+      if filter_params.any?
+        filter_params.each_with_index do |values|
+          key = values.first
+          value = values.last
+          valid = true if car[key] == value || car[key] == value.to_i
+        end
+        valid
+      else
+        true
+      end
+    end
+    render json: objects.to_json
   end
 
   private
 
-  def cars
-    [
-      {lat: 47.414928, lng: 9.365397, model: "Volvo V90"},
-      {lat: 47.416928, lng: 9.363397, model: "Volvo V60"},
-      {lat: 47.412928, lng: 9.367397, model: "Volvo V40"}
-    ]
+  def filter_params
+    filtered_params = params.permit(:name, :color, :seats, :horse_power).to_h
   end
 end

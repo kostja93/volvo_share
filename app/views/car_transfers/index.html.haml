@@ -1,0 +1,5 @@
+%table.table
+  - @car_transfers.each do |car_transfer|
+    %tr
+      %td
+        = link_to car_transfer.id, car_transfer_path(car_transfer.id)
