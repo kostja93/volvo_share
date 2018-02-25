@@ -1,1 +1,26 @@
-Hlloe
+.card
+  %img{:alt => "volvo_viking", :src => "http://lorempixel.com/200/400"}/
+  %h3= @user.name
+  - if @user == current_user
+    %form
+      .col-sm-6
+        .form-group.row
+          %label{:for => "formGroupExampleInput"} Enter a nickname which will be visible to other users:
+          %input#formGroupExampleInput.form-control{:placeholder => "Volvo Viking #Example", :type => "text"}/
+      .form-group.row
+        %label.col-sm-4.col-form-label{:for => "staticEmail"} Email:
+        .col-sm-8
+          %input#staticEmail.form-control-plaintext{:readonly => "readonly", :type => "text", :value => @user.email}/
+      .form-group.row
+        %label.col-sm-4.col-form-label{:for => "staticEmail"} Payment Method:
+        .col-sm-8
+          %input#staticEmail.form-control-plaintext{:readonly => "readonly", :type => "text", :value => "Mastercard *********123"}/
+      %ul.list-group
+        %h6 Recently purchased items:
+        - @user.products.each do |product|
+          %li.list-group-item.list-group-item-success= product.title
+  %hr/
+  %h5
+    Points:
+    = @user.karma
+

@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 
   def buy
     @product = Product.find(product_id)
-    if (current_user.karma - @product.price) > 0
+    if (current_user.karma - @product.price) >= 0
       current_user.products << @product
       current_user.karma -= @product.price
       current_user.save
