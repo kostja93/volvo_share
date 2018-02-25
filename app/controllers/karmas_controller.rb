@@ -1,6 +1,6 @@
 class KarmasController < ApplicationController
   def add
-    @user = User.find(user_id)
+    @user = current_user
     @user.karma += karma_points
     @user.save
     redirect_to profile_path(@user)
@@ -10,10 +10,6 @@ class KarmasController < ApplicationController
 
   def karma_params
     params.permit(:karma_id, :karma)
-  end
-
-  def user_id
-    karma_params[:karma_id]
   end
 
   def karma_points

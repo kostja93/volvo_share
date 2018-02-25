@@ -4,4 +4,4 @@
       %td= product.title
       %td= product.description
       %td= product.price.to_s + " Karma"
-      %td= link_to "buy", "#"
+      %td= link_to "buy", product_buy_path(product)

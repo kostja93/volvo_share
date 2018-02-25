@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   get "/car_dash_end", to: "pages#car_dash_end"
   resources :cars, only: [:index]
   resources :car_transfers, only: [:index, :create, :show, :new, :create]
-  resources :karmas, only: [] do
+  resource :karma, only: [] do
     get :add
   end
   resources :profiles, only: [:show]
-  resources :products, only: [:index]
+  resources :products, only: [:index] do
+    get :buy
+  end
 end
