@@ -1,24 +1,19 @@
-# README
+# A Story About Car Sharing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is Julian.
 
-Things you may want to cover:
+Julian is a daily commuter. However, he does not want to own a car.
 
-* Ruby version
+A Car is expensive, and, especially in cities, parking situation is bad. Also, cars are not environmental friendly.
 
-* System dependencies
+Julian does not like existing car sharing services. The cars must be picked up at specific locations. They require refueling an must be dropped off at designated parking lots. And sometimes even, the cars are dirty.
 
-* Configuration
+But Julian, hang out! There is one more thing.
 
-* Database creation
+With the new VolvoShare service, for a price premium, users can get the car delivered to their place. Cleaned and refueled. They can go whereever they want, drop the car off and forget about it. But how would that work in the sharing economy?
 
-* Database initialization
+The idea is really simple: By rewarding social behaviour.
 
-* How to run the test suite
+Imagine, this is Olivia. When car sharing, she occasionally fuels up the car. Also, she does not mind dropping it off at a specific location, so that the next premium user can access it conveniently. For this benevolent behaviour, Olivia receives "VikingHorns".
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Over time, she levels up. Oh, look. She's already a Jarl!
